@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  background: linear-gradient(45deg, #eaf1f4, #f5edec);
+}
+
+.arco-input-inner-wrapper {
+  background-color: transparent !important;
+  border: none;
+}
+
+.arco-menu-selected-label {
+  bottom: 0;
+}

@@ -1,25 +1,13 @@
 import '@arco-design/web-react/dist/css/arco.css'
-import { Home } from './pages/home/Index'
-import { Setting } from './pages/setting/Index'
+import { HashRouter } from 'react-router-dom'
 import { AppContext } from './stores/useAppContext'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { renderRoutes, routesConfig } from './constants/router'
 
 function App() {
-  const routers = [
-    { path: '/setting', element: <Setting /> },
-    { path: '/', element: <Home /> }
-  ]
-
   return (
     <div className="h-full">
       <AppContext.Provider value={{}}>
-        <HashRouter basename="/">
-          <Routes>
-            {routers.map((router) => (
-              <Route key={router.path} path={router.path} element={router.element} />
-            ))}
-          </Routes>
-        </HashRouter>
+        <HashRouter basename="/">{renderRoutes(routesConfig)}</HashRouter>
       </AppContext.Provider>
     </div>
   )
